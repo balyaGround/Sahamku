@@ -4,9 +4,20 @@ import logo from "../../img/logo.jpg";
 import "./main.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ModalEdit from "../../component/ModalEdit";
+import { Modal } from "react-bootstrap";
 
 function Main() {
   const [data, setData] = useState([]);
+  const [show, SetShow] = useState(false);
+  const [requestid, SetRequestId] = useState();
+  // const handleShow = () => SetShow(true);
+
+  const handleOpen = (requestid) => {
+    SetRequestId(requestid);
+    SetShow(true);
+  };
+
   const getData = async () => {
     await axios
       .get("https://datapengumuman.herokuapp.com/data_saham")
@@ -19,6 +30,7 @@ function Main() {
     getData();
   }, []);
   console.log("data", data);
+
   return (
     <div>
       <div className="wrapper-main">
@@ -164,7 +176,7 @@ function Main() {
               <div className="row justify-content-evenly">
                 {data.map((item) => (
                   <div className="col saham">
-                    <div className="col-card " data-aos="flip-left" data-aos-delay="300">
+                    <div className="col-card " data-aos="flip-left" data-aos-delay="400">
                       <img src={item.img} alt="" className="mt-3" />
                       <div className="card-body justify-text-center">
                         <p className="card-text text-black">{item.nama}</p>
@@ -174,8 +186,14 @@ function Main() {
                         <h5 className="card-text text-black">Dividend Yield (DY) : {item.dy}%</h5>
                         <div className="d-flex justify-content-end align-items-center">
                           <div>
-                            <button type="button" className="btn btn-m btn-outline-info">
-                              Edit
+                            <button
+                              type="button"
+                              className="btn btn-m btn-outline-info"
+                              onClick={() => {
+                                handleOpen(item.id);
+                              }}
+                            >
+                              Ubah
                             </button>
                           </div>
                         </div>
@@ -183,6 +201,9 @@ function Main() {
                     </div>
                   </div>
                 ))}
+                <Modal show={show}>
+                  <ModalEdit showModal={show} id={requestid} closeModal={SetShow} />
+                </Modal>
               </div>
             </div>
           </div>
