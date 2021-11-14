@@ -324,7 +324,7 @@ function Main() {
                 {dataAwal.map((item) => (
                   <div className="col saham">
                     <div className="col-card " data-aos="zoom-in" data-aos-delay="500">
-                      <img src={item.img} alt="" className="mt-3" />
+                      <img src={item.img} alt="" className="mt-3 " />
                       <div className="card-body justify-text-center">
                         <p className="card-text text-black">{item.nama}</p>
                         <h5 className="card-text text-black">Price to Earning Ratio(PER) : {item.per}x</h5>
