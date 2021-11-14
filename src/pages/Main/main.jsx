@@ -10,6 +10,7 @@ import { Modal } from "react-bootstrap";
 function Main() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
+  // const [hasil, SetShow] = useState([]);
   const [requestid, SetRequestId] = useState();
   const [dataAwal, setDataAwal] = useState([]);
 
