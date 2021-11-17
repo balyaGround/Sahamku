@@ -75,10 +75,31 @@ function Main() {
     getDataAwal();
   }, []);
 
-  // useEffect(() => {
-  //   // didMount
-  //   getBobot();
-  // }, []);
+  // let bobotPbv = data.map((item) => {
+  //   if (item.pbv >= 0.1 && item.pbv <= 0.9) {
+  //     bobotPbv = 1;
+  //   } else if (item.pbv >= 1 && item.pbv <= 1.9) {
+  //     bobotPbv = 0.75;
+  //   } else if (item.pbv >= 2 && item.pbv <= 2.9) {
+  //     bobotPbv = 0.5;
+  //   } else if (item.pbv >= 3 && item.pbv <= 3.9) {
+  //     bobotPbv = 0.25;
+  //   } else bobotPbv = 0;
+  // });
+
+  // let bobotRoe = data.map((item) => {
+  //   if (item.roe >= 1 && item.roe <= 4.9) {
+  //     item.roe = 0;
+  //   } else if (item.roe >= 5 && item.roe <= 9.9) {
+  //     item.roe = 0.25;
+  //   } else if (item.roe >= 10 && item.roe <= 19.9) {
+  //     item.roe = 0.5;
+  //   } else if (item.roe >= 20 && item.roe <= 50) {
+  //     item.roe = 0.75;
+  //   } else bobotRoe = 1;
+  // });
+  // console.log("bobot roe>>>>", bobotRoe);
+  // console.log("bobot PBV>>>>>", bobotPbv);
   const test = data.map((item) => {
     if (item.pbv >= 0.1 && item.pbv <= 0.9) {
       item.pbv = 1;

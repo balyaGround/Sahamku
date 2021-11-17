@@ -6,7 +6,7 @@ import axios from "axios";
 import centang from "../img/saveLogo.png";
 import "sweetalert2/dist/sweetalert2.min.css";
 
-function ModalEdit({ showModal, id, closeModal }) {
+function ModalEdit({ id, closeModal }) {
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState({
     id: "",
