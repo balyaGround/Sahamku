@@ -233,7 +233,7 @@ function Main() {
             </div>
           </div>
         </nav>
-        <section id="Profiles">
+        {/* <section id="Profiles">
           <div class="container mt-5 ms-auto">
             <div class="row text-center mb-3 text-white">
               <div className="col main">
@@ -291,7 +291,7 @@ function Main() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <section id="Bluechips">
           <div class="container mt-5">
             <div class="row text-center mb-3 main">
