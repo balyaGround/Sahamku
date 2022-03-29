@@ -1,0 +1,7 @@
+.container-login {
+  background-image: url("../../img/Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 100%;
+}

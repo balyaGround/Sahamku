@@ -1,7 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Login from "../component/login";
+import Login from "../pages/Login/login";
 import LandingPage from "../pages/LandingPage";
 import Main from "../pages/Main/main";
+import Signup from "../pages/Login/singup";
 function Router() {
   // console.log("window location", window.location.pathname);
 
@@ -10,6 +11,9 @@ function Router() {
       <Switch>
         <Route exact path="/">
           <Login />
+        </Route>
+        <Route exact path="/signUp">
+          <Signup />
         </Route>
         <Route exact path="/main">
           <Main />
