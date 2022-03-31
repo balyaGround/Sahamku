@@ -245,7 +245,7 @@ function Main() {
           <div className="col-12">
             <Box className="box" sx={{ width: "100%" }}>
               <AppBar position="static">
-                <Tabs centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="fullWidth" aria-label="full width tabs example">
+                <Tabs centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
                   <Tab label="Proses" {...a11yProps(2)} />

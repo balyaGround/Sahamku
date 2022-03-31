@@ -3,6 +3,7 @@ nav {
   position: sticky !important;
   z-index: 999;
 }
+
 .box {
   background-image: url("../../img/Background.png");
   background-size: cover;
