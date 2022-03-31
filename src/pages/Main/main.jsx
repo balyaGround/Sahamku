@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/logo.jpg";
 import "./main.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalEdit from "../../component/ModalEdit";
 import { Modal } from "react-bootstrap";
-
+import PropTypes from "prop-types";
+import SwipeableViews from "react-swipeable-views";
+import { useTheme } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Header from "../../component/header";
 function Main() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
@@ -193,11 +200,250 @@ function Main() {
   // console.log("data", data);
   // console.log("bobot", bobotData);
   // console.log("bobot data", nilaiBobotAwal());
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
+    return (
+      <div role="tabpanel" hidden={value !== index} id={`full-width-tabpanel-${index}`} aria-labelledby={`full-width-tab-${index}`} {...other}>
+        {value === index && (
+          <Box sx={{ p: 3 }}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+  };
+
+  function a11yProps(index) {
+    return {
+      id: `full-width-tab-${index}`,
+      "aria-controls": `full-width-tabpanel-${index}`,
+    };
+  }
+
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
   return (
-    <div>
-      <div className="wrapper-main">
-        <nav class="navbar navbar-expand-lg navbar-dark ">
+    <>
+      {/* <Header /> */}
+      <div className="container-fluid p-0 m-0">
+        <div className="row ">
+          <div className="col-12">
+            <Box className="box" sx={{ width: "100%" }}>
+              <AppBar position="static">
+                <Tabs centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="fullWidth" aria-label="full width tabs example">
+                  <Tab label="Profiles" {...a11yProps(0)} />
+                  <Tab label="Bluechip" {...a11yProps(1)} />
+                  <Tab label="Proses" {...a11yProps(2)} />
+                  <Tab label="Hasil" {...a11yProps(3)} />
+                </Tabs>
+              </AppBar>
+              <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"} index={value} onChangeIndex={handleChangeIndex}>
+                <TabPanel value={value} index={0} dir={theme.direction}>
+                  <div class="container mt-5 ms-auto">
+                    <div class="row text-center mb-3 text-white">
+                      <div className="col main">
+                        <h1>PROFIL</h1>
+                      </div>
+                    </div>
+                    <div class="row text-center mb-4" data-aos="fade-right" data-aod-delay="500">
+                      <div className="col-3" style={{ marginLeft: "11rem" }}>
+                        <h3>Apa itu Spk?</h3>
+                      </div>
+                      <div className="row">
+                        <div class="card-saya" style={{ width: "45rem" }}>
+                          <img src="https://giansister.files.wordpress.com/2017/10/dss.jpeg?w=640" className="card-img-top rounded-circle  " alt="..." />
+                          <div class="card-body">
+                            <h4 class="card-title text-black">Sistem Pendukung Keputusan</h4>
+                            <p class="card-text text-black"> bagian dari sistem informasi berbasis komputer termasuk sistem berbasis pengetahuan (manajemen pengetahuan) yang dipakai untuk mendukung pengambilan keputusan </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row text-center mb-4 mt-5" data-aos="fade-left" data-aos-delay="200">
+                      <div className="col-3" style={{ marginLeft: "65rem" }}>
+                        <h3>Apa itu TFN?</h3>
+                      </div>
+                      <div className="row ">
+                        <div className="col-8">
+                          <span></span>
+                        </div>
+                        <div className="col-4">
+                          <div class="card-saya">
+                            <img src="https://infinityleap.com/wp-content/uploads/2016/comps/fuzzy%20logic.jpeg" className="card-img-top rounded-circle" alt="..." />
+                            <div class="card-body">
+                              <h4 class="card-title text-black mt-5 ">Triangular Fuzzy Number</h4>
+                              <p class="card-text text-black ">
+                                Bilangan Triangular Fuzzy Number (TFN) adalah himpunan fuzzy, yang digunakan untuk pengukuran yang berhubungan dengan penilaian subjektif manusia yang memakai bahasalinguistik.{" "}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row text-center mb-4" data-aos="fade-right" data-aod-delay="500">
+                      <div className="col-3" style={{ marginLeft: "13rem" }}>
+                        <h3>Apa itu AHP?</h3>
+                      </div>
+                      <div className="row">
+                        <div class="card-saya" style={{ width: "47rem" }}>
+                          <img src="https://2.bp.blogspot.com/-MYvDXrYiOY0/UYDFu61HLMI/AAAAAAAABLs/BUZFeaNdrPw/s1600/ahp.gif" class="card-img-top" alt="..." />
+                          <div class="card-body">
+                            <h4 class="card-title text-black">Analitycal Hierarchy Process</h4>
+                            <p class="card-text text-black">
+                              metode untuk memecahkan suatu situasi yang kompleks tidak terstruktur kedalam beberapa komponen dalam susunan yang hirarki, dengan memberi nilai subjektif tentang pentingnya setiap variabel secara relatif, dan
+                              menetapkan variabel mana yang memiliki prioritas paling tinggi guna mempengaruhi hasil pada situasi tersebut{" "}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={1} dir={theme.direction}>
+                  <div class="container mt-5">
+                    <div class="row text-center mb-3 main">
+                      <h1>BLUECHIPS</h1>
+                    </div>
+                    <div class="row justify-content-evenly fs-5">
+                      <div class="col-md-9 text-start bluechips">
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="200">
+                            Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="300">
+                            Masuk dalam 60 perusahaan dengan nilai transaksi di bursa tertinggi dalam 1 tahun terakhir
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
+                            Masuk daftar 60 perusahaan dengan market capitalization tertinggi dalam 1 tahun atau 12 bulan terakhir
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
+                            Menunjukkan kinerja keuangan serta prospek pertumbuhan yang tinggi
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="500">
+                            Telah listing di BEI minimal 3 bulan lamanya
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={2} dir={theme.direction}>
+                  <div class="container mt-5">
+                    <div class="row text-center mb-3 main ">
+                      <h1>Proses</h1>
+                    </div>
+                    <div className="row">
+                      <div className="col-lg-12 mt-5">
+                        <h2>Masukkan Data Parameter Saham Bluechips Terbaru</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="album ">
+                    <div className="container">
+                      <div className="row justify-content-evenly">
+                        {dataAwal.map((item) => (
+                          <div className="col saham">
+                            <div className="col-card " data-aos="zoom-in" data-aos-delay="500">
+                              <img src={item.img} alt="" className="mt-3 " />
+                              <div className="card-body justify-text-center">
+                                <p className="card-text text-black">{item.nama}</p>
+                                <h5 className="card-text text-black">Price to Earning Ratio(PER) : {item.per}x</h5>
+                                <h5 className="card-text text-black">Price to Book Value (PBV) : {item.pbv}x</h5>
+                                <h5 className="card-text text-black">Return on Equity (ROE) : {item.roe}%</h5>
+                                <h5 className="card-text text-black">Dividend Yield (DY) : {item.dy}%</h5>
+                                <div className="d-flex justify-content-end align-items-center">
+                                  <div>
+                                    <button
+                                      type="button"
+                                      className="btn btn-m btn-outline-info"
+                                      onClick={() => {
+                                        handleOpen(item.id);
+                                      }}
+                                    >
+                                      Ubah
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                        <Modal show={show}>
+                          <ModalEdit showModal={show} id={requestid} closeModal={SetShow} />
+                        </Modal>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={3} dir={theme.direction}>
+                  <div class="container mt-5">
+                    <div class="row text-center mb-3 main">
+                      <h1>Hasil</h1>
+                    </div>
+                    <div class="row justify-content-evenly fs-5">
+                      <div class="col-md-12 text-start bluechips mt-2 " data-aos="zoom-in" data-aos-delay="100">
+                        <table className="table table-striped table-hover table-bordered border-info caption-top align-middle">
+                          <caption className="text-white tex-bold">Tabel Hasil Perhitungan</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Harga Per Lot</th>
+                              <th scope="col">Price to Earnings Ratio</th>
+                              <th scope="col">Price to Book Value</th>
+                              <th scope="col">Return on Equity </th>
+                              <th scope="col">Dividend Yield</th>
+                              <th scope="col">Hasil</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {data.map((item) => (
+                              <tr>
+                                <td>
+                                  <img src={item.img} alt="" className="rounded" style={{ width: "100px", height: "100px" }} />
+                                </td>
+                                <td>Rp.{item.harga_per_lot}</td>
+                                <td>{item.per}x</td>
+                                <td>{item.pbv}x</td>
+                                <td>{item.roe}x</td>
+                                <td>{item.dy}x</td>
+                                <td>{item.hasil}%</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+              </SwipeableViews>
+            </Box>
+          </div>
+        </div>
+
+        {/* <nav class="navbar navbar-expand-lg navbar-dark ">
           <div class="container">
             <a class="navbar-brand atas-main">
               <Link to="/">
@@ -232,195 +478,21 @@ function Main() {
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
         {/* <section id="Profiles">
-          <div class="container mt-5 ms-auto">
-            <div class="row text-center mb-3 text-white">
-              <div className="col main">
-                <h1>PROFIL</h1>
-              </div>
-            </div>
-            <div class="row text-center mb-4" data-aos="fade-right" data-aod-delay="500">
-              <div className="col-3" style={{ marginLeft: "11rem" }}>
-                <h3>Apa itu Spk?</h3>
-              </div>
-              <div className="row">
-                <div class="card-saya" style={{ width: "45rem" }}>
-                  <img src="https://giansister.files.wordpress.com/2017/10/dss.jpeg?w=640" className="card-img-top rounded-circle  " alt="..." />
-                  <div class="card-body">
-                    <h4 class="card-title text-black">Sistem Pendukung Keputusan</h4>
-                    <p class="card-text text-black"> bagian dari sistem informasi berbasis komputer termasuk sistem berbasis pengetahuan (manajemen pengetahuan) yang dipakai untuk mendukung pengambilan keputusan </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row text-center mb-4 mt-5" data-aos="fade-left" data-aos-delay="200">
-              <div className="col-3" style={{ marginLeft: "65rem" }}>
-                <h3>Apa itu TFN?</h3>
-              </div>
-              <div className="row ">
-                <div className="col-8">
-                  <span></span>
-                </div>
-                <div className="col-4">
-                  <div class="card-saya">
-                    <img src="https://infinityleap.com/wp-content/uploads/2016/comps/fuzzy%20logic.jpeg" className="card-img-top rounded-circle" alt="..." />
-                    <div class="card-body">
-                      <h4 class="card-title text-black mt-5 ">Triangular Fuzzy Number</h4>
-                      <p class="card-text text-black ">Bilangan Triangular Fuzzy Number (TFN) adalah himpunan fuzzy, yang digunakan untuk pengukuran yang berhubungan dengan penilaian subjektif manusia yang memakai bahasalinguistik. </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row text-center mb-4" data-aos="fade-right" data-aod-delay="500">
-              <div className="col-3" style={{ marginLeft: "13rem" }}>
-                <h3>Apa itu AHP?</h3>
-              </div>
-              <div className="row">
-                <div class="card-saya" style={{ width: "47rem" }}>
-                  <img src="https://2.bp.blogspot.com/-MYvDXrYiOY0/UYDFu61HLMI/AAAAAAAABLs/BUZFeaNdrPw/s1600/ahp.gif" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h4 class="card-title text-black">Analitycal Hierarchy Process</h4>
-                    <p class="card-text text-black">
-                      metode untuk memecahkan suatu situasi yang kompleks tidak terstruktur kedalam beberapa komponen dalam susunan yang hirarki, dengan memberi nilai subjektif tentang pentingnya setiap variabel secara relatif, dan
-                      menetapkan variabel mana yang memiliki prioritas paling tinggi guna mempengaruhi hasil pada situasi tersebut{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </section> */}
-        <section id="Bluechips">
-          <div class="container mt-5">
-            <div class="row text-center mb-3 main">
-              <h1>BLUECHIPS</h1>
-            </div>
-            <div class="row justify-content-evenly fs-5">
-              <div class="col-md-9 text-start bluechips">
-                <div className="col">
-                  <h4 data-aos="zoom-in-right" data-aos-delay="200">
-                    Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
-                  </h4>
-                </div>
-                <div className="col">
-                  <h4 data-aos="zoom-in-right" data-aos-delay="300">
-                    Masuk dalam 60 perusahaan dengan nilai transaksi di bursa tertinggi dalam 1 tahun terakhir
-                  </h4>
-                </div>
-                <div className="col">
-                  <h4 data-aos="zoom-in-right" data-aos-delay="400">
-                    Masuk daftar 60 perusahaan dengan market capitalization tertinggi dalam 1 tahun atau 12 bulan terakhir
-                  </h4>
-                </div>
-                <div className="col">
-                  <h4 data-aos="zoom-in-right" data-aos-delay="400">
-                    Menunjukkan kinerja keuangan serta prospek pertumbuhan yang tinggi
-                  </h4>
-                </div>
-                <div className="col">
-                  <h4 data-aos="zoom-in-right" data-aos-delay="500">
-                    Telah listing di BEI minimal 3 bulan lamanya
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="Result">
-          <div class="container mt-5">
-            <div class="row text-center mb-3 main ">
-              <h1>Proses</h1>
-            </div>
-            <div className="row">
-              <div className="col-lg-12 mt-5">
-                <h2>Masukkan Data Parameter Saham Bluechips Terbaru</h2>
-              </div>
-            </div>
-          </div>
-          <div className="album ">
-            <div className="container">
-              <div className="row justify-content-evenly">
-                {dataAwal.map((item) => (
-                  <div className="col saham">
-                    <div className="col-card " data-aos="zoom-in" data-aos-delay="500">
-                      <img src={item.img} alt="" className="mt-3 " />
-                      <div className="card-body justify-text-center">
-                        <p className="card-text text-black">{item.nama}</p>
-                        <h5 className="card-text text-black">Price to Earning Ratio(PER) : {item.per}x</h5>
-                        <h5 className="card-text text-black">Price to Book Value (PBV) : {item.pbv}x</h5>
-                        <h5 className="card-text text-black">Return on Equity (ROE) : {item.roe}%</h5>
-                        <h5 className="card-text text-black">Dividend Yield (DY) : {item.dy}%</h5>
-                        <div className="d-flex justify-content-end align-items-center">
-                          <div>
-                            <button
-                              type="button"
-                              className="btn btn-m btn-outline-info"
-                              onClick={() => {
-                                handleOpen(item.id);
-                              }}
-                            >
-                              Ubah
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                <Modal show={show}>
-                  <ModalEdit showModal={show} id={requestid} closeModal={SetShow} />
-                </Modal>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="Hasil">
-          <div class="container mt-5">
-            <div class="row text-center mb-3 main">
-              <h1>Hasil</h1>
-            </div>
-            <div class="row justify-content-evenly fs-5">
-              <div class="col-md-12 text-start bluechips mt-2 " data-aos="zoom-in" data-aos-delay="100">
-                <table className="table table-striped table-hover table-bordered border-info caption-top align-middle">
-                  <caption className="text-white tex-bold">Tabel Hasil Perhitungan</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Harga Per Lot</th>
-                      <th scope="col">Price to Earnings Ratio</th>
-                      <th scope="col">Price to Book Value</th>
-                      <th scope="col">Return on Equity </th>
-                      <th scope="col">Dividend Yield</th>
-                      <th scope="col">Hasil</th>
-                      {/* <th scope="col">Hasil</th> */}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((item) => (
-                      <tr>
-                        <td>
-                          <img src={item.img} alt="" className="rounded" style={{ width: "100px", height: "100px" }} />
-                        </td>
-                        <td>Rp.{item.harga_per_lot}</td>
-                        <td>{item.per}x</td>
-                        <td>{item.pbv}x</td>
-                        <td>{item.roe}x</td>
-                        <td>{item.dy}x</td>
-                        <td>{item.hasil}%</td>
-
-                        {/* <td>{item.roe}%</td> */}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* <section id="Bluechips">
+          
+        </section> */}
+        {/* <section id="Result">
+         
+        </section> */}
+        {/* <section id="Hasil">
+          
+        </section> */}
       </div>
-    </div>
+    </>
   );
 }
 

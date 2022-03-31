@@ -91,7 +91,7 @@ function LoginForm() {
         <h1 className="h2 mb-3 fw-normal text-white">Please sign in</h1>
 
         <div className="form d-flex align-item-center">
-          <input type="text" style={{ width: "15rem" }} className="form-control mb-2" placeholder="Username" onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" style={{ width: "15rem" }} className="form-control mb-2" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="form  d-flex align-item-center">
           <input type="password" style={{ width: "15rem" }} className="form-control mb-2" placeholder="Password" autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} />
@@ -101,9 +101,7 @@ function LoginForm() {
           Login
         </Button>
         <Link to="/signUp">
-          <Button color="primary" style={{ width: "10rem" }} className="px-4">
-            Sign Up
-          </Button>
+          <p>dont have an acoount? Sign up</p>
         </Link>
         <h2 className="mt-5 mb-3 text-white">S-1 Ilmu Komputer USU</h2>
       </form>

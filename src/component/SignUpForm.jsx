@@ -107,9 +107,7 @@ function SignupForm() {
           Sign Up
         </Button>
         <Link to="/">
-          <Button color="primary" style={{ width: "10rem" }} className="px-4">
-            Back to Login
-          </Button>
+          <p>Back to Login</p>
         </Link>
 
         <h2 className="mt-5 mb-3 text-white">S-1 Ilmu Komputer USU</h2>
