@@ -17,16 +17,20 @@ nav {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 50px;
-  width: 40rem;
-  min-height: 34rem;
   background-color: rgb(255, 248, 248);
-  height: 460px;
+  font-size: 20px;
+}
+
+p.card-text.text-black {
+  text-align: justify;
 }
 .card-saya img {
   margin-top: 15px;
   margin-bottom: 0;
 }
-
+.tabss Tab a .sign-out {
+  text-decoration: none;
+}
 .bluechips h4 {
   border: 1px solid rgba(3, 205, 255, 0.76);
   box-shadow: 0px 0px 12px 5px rgba(1, 200, 250, 0.911);
@@ -55,7 +59,6 @@ nav {
   margin-bottom: 3rem;
   margin-right: 2rem;
   margin-top: 2rem;
-  height: 33rem;
 }
 
 .col-card img {

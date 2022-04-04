@@ -95,9 +95,8 @@ function ModalEdit({ id, closeModal }) {
           showConfirmButton: false,
           title: "Your data Has Been Updated",
         },
-        window.setTimeout(function () {
-          window.location.reload();
-        }, 400)
+
+        window.location.replace("/proses")
       );
     } catch (error) {
       if (error.response.status === 400) {

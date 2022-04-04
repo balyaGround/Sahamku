@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./main.css";
+import "../Main/main.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalEdit from "../../component/ModalEdit";
@@ -13,7 +13,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-function Main() {
+function Proses() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
   // const [hasil, SetShow] = useState([]);
@@ -227,7 +227,7 @@ function Main() {
   }
 
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(2);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -236,7 +236,6 @@ function Main() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-
   const handleSignOut = () => {
     window.location.replace("/");
   };
@@ -377,7 +376,7 @@ function Main() {
                             Menunjukkan kinerja keuangan serta prospek pertumbuhan yang tinggi
                           </h4>
                         </div>
-                        <div className="col">
+                        <div className="col mb-2 pb-1">
                           <h4 data-aos="zoom-in-right" data-aos-delay="500">
                             Telah listing di BEI minimal 3 bulan lamanya
                           </h4>
@@ -532,4 +531,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Proses;
