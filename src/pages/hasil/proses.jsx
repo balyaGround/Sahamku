@@ -227,7 +227,7 @@ function Proses() {
   }
 
   const theme = useTheme();
-  const [value, setValue] = React.useState(2);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -250,9 +250,9 @@ function Proses() {
                 <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
-                  <Tab label="Proses" {...a11yProps(2)} />
-                  <Tab label="Hasil" {...a11yProps(3)} />
-
+                  <Tab label="Parameter" {...a11yProps(2)} />
+                  <Tab label="Proses" {...a11yProps(3)} />
+                  <Tab label="Hasil" {...a11yProps(4)} />
                   <Tab label="Log Out" onClick={handleSignOut} />
                 </Tabs>
               </AppBar>
@@ -386,6 +386,42 @@ function Proses() {
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
+                  <div class="container mt-1">
+                    <div class="row text-center mb-3 main">
+                      <h1>BLUECHIPS</h1>
+                    </div>
+                    <div class="row justify-content-evenly fs-5">
+                      <div class="col text-start bluechips">
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="200">
+                            Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="300">
+                            Masuk dalam 60 perusahaan dengan nilai transaksi di bursa tertinggi dalam 1 tahun terakhir
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
+                            Masuk daftar 60 perusahaan dengan market capitalization tertinggi dalam 1 tahun atau 12 bulan terakhir
+                          </h4>
+                        </div>
+                        <div className="col">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
+                            Menunjukkan kinerja keuangan serta prospek pertumbuhan yang tinggi
+                          </h4>
+                        </div>
+                        <div className="col mb-2 pb-1">
+                          <h4 data-aos="zoom-in-right" data-aos-delay="500">
+                            Telah listing di BEI minimal 3 bulan lamanya
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={3} dir={theme.direction}>
                   <div class="container mt-5">
                     <div class="row text-center mb-3 main ">
                       <h1>Proses</h1>
@@ -433,7 +469,7 @@ function Proses() {
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel value={value} index={3} dir={theme.direction}>
+                <TabPanel value={value} index={4} dir={theme.direction}>
                   <div class="container mt-5">
                     <div class="row text-center mb-3 main">
                       <h1>Hasil</h1>
