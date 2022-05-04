@@ -85,9 +85,10 @@ function LoginForm() {
   return (
     <>
       <form className="d-flex flex-column align-items-center">
-        <img className="mb-4 rounded-circle bg-light" src={logo} alt="" width="300" height="300" />
+       
         <h1 className="h3 mb-3 fw-normal text-white">SUTI SULISTYANI</h1>
         <h2 className="text-white">151401091</h2>
+        <img className="mb-4 rounded-circle bg-light" src={logo} alt="" width="300" height="300" />
         <h1 className="h2 mb-3 fw-normal text-white">Please sign in</h1>
 
         <div className="form d-flex align-item-center">
@@ -103,7 +104,7 @@ function LoginForm() {
         <Link to="/signUp">
           <p>dont have an acoount? Sign up</p>
         </Link>
-        <h2 className="mt-5 mb-3 text-white">S-1 Ilmu Komputer USU</h2>
+        <h2 className="mt-5 mb-3 text-white">Program S-1 Ilmu Komputer Fakultas Komputer dan Teknologi Informasi<br></br> Universitas  Sumatera Utara</h2>
       </form>
     </>
   );
