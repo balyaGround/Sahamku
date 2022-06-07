@@ -248,8 +248,8 @@ function Main() {
         <div className="row ">
           <div className="col-12">
             <Box className="box" sx={{ width: "100%" }}>
-              <AppBar position="static">
-                <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="scrollable" aria-label="full width tabs example">
+              <AppBar position="static" color="inherit">
+                <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
                   {/* <Tab label="Parameter" {...a11yProps(2)} /> */}

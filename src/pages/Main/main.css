@@ -5,7 +5,7 @@ nav {
 }
 
 .box {
-  background-image: url("../../img/Background.png");
+  background-image: url("../../img/wallpaperbette.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -28,6 +28,7 @@ p.card-text.text-black {
   margin-top: 15px;
   margin-bottom: 0;
 }
+
 .tabss Tab a .sign-out {
   text-decoration: none;
 }
