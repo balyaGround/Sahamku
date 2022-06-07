@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, FormControl, FormGroup, Form, Modal } from "react-bootstrap";
+import { Button, FormControl, FormGroup, Form, Modal, FormLabel } from "react-bootstrap";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import Cross from "../img/OopsCross.svg";
 import axios from "axios";
@@ -96,7 +96,7 @@ function ModalEdit({ id, closeModal }) {
           title: "Your data Has Been Updated",
         },
 
-        window.location.replace("/proses")
+        window.location.reload()
       );
     } catch (error) {
       if (error.response.status === 400) {
@@ -128,15 +128,19 @@ function ModalEdit({ id, closeModal }) {
       <Modal.Body>
         <Form>
           <FormGroup>
+            <FormLabel>Price to Earning Ratio(PER)</FormLabel>
             <FormControl type="number" step="0.01" placeholder="Per" required style={{ marginBottom: "2rem" }} value={update?.per} onChange={(e) => setUpdate({ ...update, per: parseFloat(e.target.value) })} />
           </FormGroup>
           <FormGroup>
+            <FormLabel>Price to Book Value (PBV)</FormLabel>
             <FormControl type="number" step="0.01" placeholder="Pbv" required style={{ marginBottom: "2rem" }} value={update?.pbv} onChange={(e) => setUpdate({ ...update, pbv: parseFloat(e.target.value) })} />
           </FormGroup>
           <FormGroup>
+            <FormLabel>Return on Equity (ROE)</FormLabel>
             <FormControl type="number" step="0.01" placeholder="Roe" required style={{ marginBottom: "2rem" }} value={update?.roe} onChange={(e) => setUpdate({ ...update, roe: parseFloat(e.target.value) })} />
           </FormGroup>
           <FormGroup>
+            <FormLabel>Dividend Yield (DY)</FormLabel>
             <FormControl type="number" step="0.01" placeholder="Dy" required value={update?.dy} onChange={(e) => setUpdate({ ...update, dy: parseFloat(e.target.value) })} />
           </FormGroup>
         </Form>

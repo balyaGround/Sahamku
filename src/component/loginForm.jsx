@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cross from "../img/OopsCross.svg";
+import load from "../img/load.gif";
 import { Button } from "react-bootstrap";
 import logo from "../img/usu.jpeg";
 import { Link } from "react-router-dom";
@@ -12,6 +13,16 @@ function LoginForm() {
   const handleLogin = async () => {
     const body = { email: email, password: password };
     const Swal = require("sweetalert2");
+    await Swal.fire({
+      imageUrl: `${load}`,
+      imageWidth: 800,
+      imageHeight: 200,
+      imageAlt: "Custom image",
+      width: 500,
+      timer: 2000,
+      showConfirmButton: false,
+      title: "Loading",
+    });
     try {
       const res = await axios.post("https://server-suti.herokuapp.com/api/v1/auth/login", body).then((resp) => {
         localStorage.setItem("Token", resp.data.data.token);
@@ -85,7 +96,6 @@ function LoginForm() {
   return (
     <>
       <form className="d-flex flex-column align-items-center">
-       
         <h1 className="h3 mb-3 fw-normal text-white">SUTI SULISTYANI</h1>
         <h2 className="text-white">151401091</h2>
         <img className="mb-4 rounded-circle bg-light" src={logo} alt="" width="300" height="300" />
@@ -104,7 +114,9 @@ function LoginForm() {
         <Link to="/signUp">
           <p>dont have an acoount? Sign up</p>
         </Link>
-        <h2 className="mt-5 mb-3 text-white">Program S-1 Ilmu Komputer Fakultas Komputer dan Teknologi Informasi<br></br> Universitas  Sumatera Utara</h2>
+        <h2 className="mt-5 mb-3 text-white">
+          Program S-1 Ilmu Komputer Fakultas Komputer dan Teknologi Informasi<br></br> Universitas Sumatera Utara
+        </h2>
       </form>
     </>
   );

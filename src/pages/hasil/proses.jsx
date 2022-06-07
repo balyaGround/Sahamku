@@ -72,13 +72,10 @@ function Proses() {
 
   // // console.log("random", result);
   // console.log("Hasil", hasil);
-  useEffect(() => {
+  useEffect(async () => {
     // didMount
-    getData();
-  }, []);
-  useEffect(() => {
-    // didMount
-    getDataAwal();
+    await getData();
+    await getDataAwal();
   }, []);
 
   // let bobotPbv = data.map((item) => {
@@ -150,6 +147,7 @@ function Proses() {
     return item;
   });
   console.log("test", test);
+  console.log("data", data);
   // const bobotPbv = (data) => {
   //   if (data?.pbv >= 0.1 && data?.pbv <= 0.9) {
   //     bobotData.bobotPbv = 1;
@@ -239,6 +237,7 @@ function Proses() {
   const handleSignOut = () => {
     window.location.replace("/");
   };
+
   return (
     <>
       {/* <Header /> */}

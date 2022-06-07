@@ -13,12 +13,13 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Proses from "../hasil/proses";
 function Main() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
+  const [dataOlah, setdataOlah] = useState([]);
   // const [hasil, SetShow] = useState([]);
   const [requestid, SetRequestId] = useState();
-  const [dataAwal, setDataAwal] = useState([]);
 
   // const handleShow = () => SetShow(true);
 
@@ -33,12 +34,13 @@ function Main() {
       .then((result) => setData(result.data))
       .catch((err) => console.log(err));
   };
-  const getDataAwal = async () => {
+  const getDataBaru = async () => {
     await axios
       .get("https://datapengumuman.herokuapp.com/data_saham")
-      .then((result) => setDataAwal(result.data))
+      .then((result) => setdataOlah(result.data))
       .catch((err) => console.log(err));
   };
+
   // const getBobot = async () => {
   //   await axios
   //     .get("https://datapengumuman.herokuapp.com/data_bobot")
@@ -72,13 +74,10 @@ function Main() {
 
   // // console.log("random", result);
   // console.log("Hasil", hasil);
-  useEffect(() => {
+  useEffect(async () => {
     // didMount
-    getData();
-  }, []);
-  useEffect(() => {
-    // didMount
-    getDataAwal();
+    await getData();
+    await getDataBaru();
   }, []);
 
   // let bobotPbv = data.map((item) => {
@@ -106,50 +105,53 @@ function Main() {
   // });
   // console.log("bobot roe>>>>", bobotRoe);
   // console.log("bobot PBV>>>>>", bobotPbv);
-  const test = data.map((item) => {
-    if (item.pbv >= 0.1 && item.pbv <= 0.9) {
+
+  const test = dataOlah?.map((item) => {
+    if (item?.pbv >= 0.1 && item?.pbv <= 0.9) {
       item.pbv = 1;
-    } else if (item.pbv >= 1 && item.pbv <= 1.9) {
+    } else if (item?.pbv >= 1 && item?.pbv <= 1.9) {
       item.pbv = 0.75;
-    } else if (item.pbv >= 2 && item.pbv <= 2.9) {
+    } else if (item?.pbv >= 2 && item?.pbv <= 2.9) {
       item.pbv = 0.5;
-    } else if (item.pbv >= 3 && item.pbv <= 3.9) {
+    } else if (item?.pbv >= 3 && item?.pbv <= 3.9) {
       item.pbv = 0.25;
     } else item.pbv = 0;
 
-    if (item.per >= 5 && item.per <= 9) {
+    if (item?.per >= 5 && item?.per <= 9) {
       item.per = 1;
-    } else if (item.per >= 10 && item.per <= 14) {
+    } else if (item?.per >= 10 && item?.per <= 14) {
       item.per = 0.75;
-    } else if (item.per >= 15 && item.per <= 19) {
+    } else if (item?.per >= 15 && item?.per <= 19) {
       item.per = 0.5;
-    } else if (item.per >= 20 && item.per <= 24) {
+    } else if (item?.per >= 20 && item?.per <= 24) {
       item.per = 0.25;
-    } else if (item.per > 24) item.per = 0;
+    } else if (item?.per > 24) item.per = 0;
 
-    if (item.dy >= 0 && item.dy <= 0.9) {
+    if (item?.dy >= 0 && item?.dy <= 0.9) {
       item.dy = 0;
-    } else if (item.dy >= 1 && item.dy <= 1.9) {
+    } else if (item?.dy >= 1 && item?.dy <= 1.9) {
       item.dy = 0.25;
-    } else if (item.dy >= 2 && item.dy <= 2.9) {
+    } else if (item?.dy >= 2 && item?.dy <= 2.9) {
       item.dy = 0.5;
-    } else if (item.dy >= 3 && item.dy <= 3.9) {
+    } else if (item?.dy >= 3 && item?.dy <= 3.9) {
       item.dy = 0.75;
-    } else if (item.dy >= 4) item.dy = 1;
+    } else if (item?.dy >= 4) item.dy = 1;
 
-    if (item.roe >= 1 && item.roe <= 4.9) {
+    if (item?.roe >= 1 && item?.roe <= 4.9) {
       item.roe = 0;
-    } else if (item.roe >= 5 && item.roe <= 9.9) {
+    } else if (item?.roe >= 5 && item?.roe <= 9.9) {
       item.roe = 0.25;
-    } else if (item.roe >= 10 && item.roe <= 19.9) {
+    } else if (item?.roe >= 10 && item?.roe <= 19.9) {
       item.roe = 0.5;
-    } else if (item.roe >= 20 && item.roe <= 50) {
+    } else if (item?.roe >= 20 && item?.roe <= 50) {
       item.roe = 0.75;
-    } else if (item.roe > 50) item.roe = 1;
-
+    } else if (item?.roe > 50);
+    item.roe = 1;
     return item;
   });
-  console.log("test", test);
+  // console.log("test", test);
+  console.log("data Awal", data);
+  console.log("first", test);
   // const bobotPbv = (data) => {
   //   if (data?.pbv >= 0.1 && data?.pbv <= 0.9) {
   //     bobotData.bobotPbv = 1;
@@ -435,7 +437,7 @@ function Main() {
                   <div className="album ">
                     <div className="container">
                       <div className="row justify-content-evenly">
-                        {dataAwal.map((item) => (
+                        {data.map((item) => (
                           <div className="col saham">
                             <div className="col-card " data-aos="zoom-in" data-aos-delay="500">
                               <img src={item.img} alt="" className="mt-3 " />
@@ -490,7 +492,7 @@ function Main() {
                             </tr>
                           </thead>
                           <tbody>
-                            {data.map((item) => (
+                            {dataOlah.map((item) => (
                               <tr>
                                 <td>
                                   <img src={item.img} alt="" className="rounded" style={{ width: "100px", height: "100px" }} />
