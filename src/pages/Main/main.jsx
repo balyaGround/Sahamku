@@ -252,9 +252,9 @@ function Main() {
                 <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="secondary" textColor="black" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
-                  <Tab label="Parameter" {...a11yProps(2)} />
-                  <Tab label="Proses" {...a11yProps(3)} />
-                  <Tab label="Hasil" {...a11yProps(4)} />
+                  {/* <Tab label="Parameter" {...a11yProps(2)} /> */}
+                  <Tab label="Proses" {...a11yProps(2)} />
+                  <Tab label="Hasil" {...a11yProps(3)} />
                   <Tab label="Log Out" onClick={handleSignOut} />
                 </Tabs>
               </AppBar>
@@ -387,7 +387,7 @@ function Main() {
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
+                {/* <TabPanel value={value} index={2} dir={theme.direction}>
                   <div class="container mt-1">
                     <div class="row text-center mb-3 main">
                       <h1>BLUECHIPS</h1>
@@ -421,9 +421,9 @@ function Main() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </TabPanel>
-                <TabPanel value={value} index={3} dir={theme.direction}>
+                  </div> */}
+
+                <TabPanel value={value} index={2} dir={theme.direction}>
                   <div class="container mt-5">
                     <div class="row text-center mb-3 main ">
                       <h1>Proses</h1>
@@ -471,7 +471,7 @@ function Main() {
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel value={value} index={4} dir={theme.direction}>
+                <TabPanel value={value} index={3} dir={theme.direction}>
                   <div class="container mt-5">
                     <div class="row text-center mb-3 main">
                       <h1>Hasil</h1>
