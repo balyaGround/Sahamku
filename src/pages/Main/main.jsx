@@ -14,6 +14,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Proses from "../hasil/proses";
+import Cross from "../../img/OopsCross.svg";
 function Main() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
@@ -238,8 +239,20 @@ function Main() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-  const handleSignOut = () => {
-    window.location.replace("/");
+  const handleSignOut = async () => {
+    const Swal = require("sweetalert2");
+    await Swal.fire({
+      title: "Do you want to Logout?",
+      showCancelButton: true,
+      confirmButtonText: "Ok",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.replace("/");
+      } else {
+        window.location.reload();
+      }
+    });
   };
   return (
     <>
@@ -255,7 +268,7 @@ function Main() {
                   {/* <Tab label="Parameter" {...a11yProps(2)} /> */}
                   <Tab label="Proses" {...a11yProps(2)} />
                   <Tab label="Hasil" {...a11yProps(3)} />
-                  <Tab label="Log Out" onClick={handleSignOut} />
+                  <Tab label="Log Out" {...a11yProps(4)} onClick={handleSignOut} />
                 </Tabs>
               </AppBar>
               <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"} index={value} onChangeIndex={handleChangeIndex}>
@@ -265,6 +278,61 @@ function Main() {
                       <div className="col main">
                         <h1>PROFIL</h1>
                       </div>
+                    </div>
+                    <div className="row mb-5">
+                      <div className="col">
+                        <div class="card-saya">
+                          <div class="card-body">
+                            <h2 class="card-title text-black">Mengenal Saham</h2>
+                            <p class="card-text text-black ">
+                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh keuntungan dari kenaikan harga (capital gain)
+                              ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun
+                              tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh
+                              berupa deviden yaitu bagian dari keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan dan
+                              khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik terhadap pergerakan harga dari daftar saham yang
+                              dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22 jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan
+                              (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia
+                              lebih dari beberapa alternatif pilihan saham dan beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu:
+                              pertimbangan fundamental dan pertimbangan teknikal (Hartono, 2003).
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row ">
+                      <div className="col">
+                        <div class="card-saya">
+                          <div class="card-body">
+                            <h2 class="card-title text-black">Jenis saham</h2>
+                            <p class="card-text text-black ">
+                              1. Saham Biasa <br></br>
+                              2. Saham Preferen Ciri ciri saham: <br></br>
+                              1. Saham yang Anomali dan Indeks <br></br>
+                              2. Saham yang posisi open lebih rendah dari posisi close <br></br>
+                              3. Saham yang jatuh dalam Manfaat saham:<br></br>
+                              1. Deviden <br></br>
+                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM. <br></br>
+                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham, yaitu:<br></br>
+                              1. Tidak terdapat pembagian deviden <br></br>
+                              2. Risiko Likuidasi <br></br>
+                              3. Saham delisting dari bursa <br></br>
+                              4. Kehilangan aset Karakteristik saham: Dalam hal ini, karakteristik saham adalah karakteristik saham perusahaan go – public.<br></br>
+                              Terdapat 3 jenis nilai yang melekat pada suatu saham perusahaan go – public, adalah: <br></br>
+                              1. Nilai nominal (Nilai pari) <br></br>
+                              2. Nilai wajar saham <br></br>
+                              3. Nilai pasar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={1} dir={theme.direction}>
+                  <div class="container mt-1">
+                    <div class="row text-center mb-3 main">
+                      <h1>BLUECHIPS</h1>
                     </div>
                     <div class="row text-center mb-4">
                       {" "}
@@ -348,13 +416,6 @@ function Main() {
                           </p>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction}>
-                  <div class="container mt-1">
-                    <div class="row text-center mb-3 main">
-                      <h1>BLUECHIPS</h1>
                     </div>
                     <div class="row justify-content-evenly fs-5">
                       <div class="col text-start bluechips">
@@ -507,6 +568,63 @@ function Main() {
                             ))}
                           </tbody>
                         </table>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={4} dir={theme.direction}>
+                  <div class="container mt-1 ms-auto">
+                    <div class="row text-center mb-3 text-white">
+                      <div className="col main">
+                        <h1>PROFIL</h1>
+                      </div>
+                    </div>
+                    <div className="row mb-5">
+                      <div className="col">
+                        <div class="card-saya">
+                          <div class="card-body">
+                            <h2 class="card-title text-black">Mengenal Saham</h2>
+                            <p class="card-text text-black ">
+                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh keuntungan dari kenaikan harga (capital gain)
+                              ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun
+                              tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh
+                              berupa deviden yaitu bagian dari keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan dan
+                              khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik terhadap pergerakan harga dari daftar saham yang
+                              dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22 jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan
+                              (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia
+                              lebih dari beberapa alternatif pilihan saham dan beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu:
+                              pertimbangan fundamental dan pertimbangan teknikal (Hartono, 2003).
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row ">
+                      <div className="col">
+                        <div class="card-saya">
+                          <div class="card-body">
+                            <h2 class="card-title text-black">Jenis saham</h2>
+                            <p class="card-text text-black ">
+                              1. Saham Biasa <br></br>
+                              2. Saham Preferen Ciri ciri saham: <br></br>
+                              1. Saham yang Anomali dan Indeks <br></br>
+                              2. Saham yang posisi open lebih rendah dari posisi close <br></br>
+                              3. Saham yang jatuh dalam Manfaat saham:<br></br>
+                              1. Deviden <br></br>
+                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM. <br></br>
+                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham, yaitu:<br></br>
+                              1. Tidak terdapat pembagian deviden <br></br>
+                              2. Risiko Likuidasi <br></br>
+                              3. Saham delisting dari bursa <br></br>
+                              4. Kehilangan aset Karakteristik saham: Dalam hal ini, karakteristik saham adalah karakteristik saham perusahaan go – public.<br></br>
+                              Terdapat 3 jenis nilai yang melekat pada suatu saham perusahaan go – public, adalah: <br></br>
+                              1. Nilai nominal (Nilai pari) <br></br>
+                              2. Nilai wajar saham <br></br>
+                              3. Nilai pasar
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
