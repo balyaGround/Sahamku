@@ -273,27 +273,29 @@ function Main() {
               </AppBar>
               <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"} index={value} onChangeIndex={handleChangeIndex}>
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                  <div class="container mt-1 ms-auto">
-                    <div class="row text-center mb-3 text-white">
+                  <div className="container mt-1 ms-auto">
+                    <div className="row text-center mb-3 text-white">
                       <div className="col main">
                         <h1>PROFIL</h1>
                       </div>
                     </div>
                     <div className="row mb-5">
                       <div className="col">
-                        <div class="card-saya">
-                          <div class="card-body">
-                            <h2 class="card-title text-black">Mengenal Saham</h2>
-                            <p class="card-text text-black ">
-                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh keuntungan dari kenaikan harga (capital gain)
-                              ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun
-                              tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh
-                              berupa deviden yaitu bagian dari keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan dan
-                              khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik terhadap pergerakan harga dari daftar saham yang
-                              dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22 jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan
-                              (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia
-                              lebih dari beberapa alternatif pilihan saham dan beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu:
-                              pertimbangan fundamental dan pertimbangan teknikal (Hartono, 2003).
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black">Mengenal Saham</h2>
+                            <p className="card-text text-black ">
+                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh
+                              keuntungan dari kenaikan harga (capital gain) ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan
+                              yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus
+                              Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh berupa deviden yaitu bagian dari
+                              keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan
+                              dan khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik
+                              terhadap pergerakan harga dari daftar saham yang dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22
+                              jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia
+                              (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia lebih dari beberapa alternatif pilihan saham dan
+                              beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu: pertimbangan
+                              fundamental dan pertimbangan teknikal (Hartono, 2003).
                             </p>
                           </div>
                         </div>
@@ -302,23 +304,28 @@ function Main() {
 
                     <div className="row ">
                       <div className="col">
-                        <div class="card-saya">
-                          <div class="card-body">
-                            <h2 class="card-title text-black">Jenis saham</h2>
-                            <p class="card-text text-black ">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black">Jenis saham</h2>
+                            <p className="card-text text-black ">
                               1. Saham Biasa <br></br>
-                              2. Saham Preferen Ciri ciri saham: <br></br>
+                              2. Saham Preferen <br></br>
+                              Ciri ciri saham: <br></br>
                               1. Saham yang Anomali dan Indeks <br></br>
                               2. Saham yang posisi open lebih rendah dari posisi close <br></br>
-                              3. Saham yang jatuh dalam Manfaat saham:<br></br>
+                              3. Saham yang jatuh dalam<br></br>
+                              Manfaat saham:<br></br>
                               1. Deviden <br></br>
-                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM. <br></br>
-                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham, yaitu:<br></br>
+                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM.{" "}
+                              <br></br>
+                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham,
+                              yaitu:<br></br>
                               1. Tidak terdapat pembagian deviden <br></br>
                               2. Risiko Likuidasi <br></br>
                               3. Saham delisting dari bursa <br></br>
                               4. Kehilangan aset Karakteristik saham: Dalam hal ini, karakteristik saham adalah karakteristik saham perusahaan go – public.<br></br>
-                              Terdapat 3 jenis nilai yang melekat pada suatu saham perusahaan go – public, adalah: <br></br>
+                              Terdapat 3 jenis nilai yang melekat pada suatu saham perusahaan go – public, <br></br>
+                              adalah: <br></br>
                               1. Nilai nominal (Nilai pari) <br></br>
                               2. Nilai wajar saham <br></br>
                               3. Nilai pasar
@@ -330,98 +337,104 @@ function Main() {
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                  <div class="container mt-1">
-                    <div class="row text-center mb-3 main">
+                  <div className="container mt-1">
+                    <div className="row text-center mb-3 main text-white">
                       <h1>BLUECHIPS</h1>
                     </div>
-                    <div class="row text-center mb-4">
-                      {" "}
+                    <div className="row text-center mb-4">
                       {/* data-aos="fade-right" data-aod-delay="500"// */}
                       <div className="col">
-                        <h1 className="mb-4">Mengenal Saham Bluechip: Pengertian dan kriterianya</h1>
+                        <h1 className="mb-4 text-white">Mengenal Saham Bluechip: Pengertian dan kriterianya</h1>
                       </div>
                       <div className="row">
                         <div className="col">
-                          <div class="card-saya">
-                            <img src="https://giansister.files.wordpress.com/2017/10/dss.jpeg?w=640" className="card-img-top rounded-circle  " alt="..." />
-                            <div class="card-body">
-                              <h2 class="card-title text-black">Apa itu Bluechip</h2>
-                              <p class="card-text text-black ">
-                                Saham menjadi salah satu instrumen investasi yang cukup populer di Indonesia, salah satunya adalah saham blue chip. Melalui bursa saham atau pasar modal, masyarakat bisa meraih keuntungan sebagai salah satu
-                                cara memperkuat kondisi finansialnya.<br></br>
-                                Bagi Anda yang tertarik atau baru mencoba instrumen investasi ini, mungkin Anda akan menemukan berbagai istilah baru. Dua diantaranya ialah saham LQ45, dan saham blue chip.<br></br>
-                                Saham blue chip sendiri diartikan sebagai saham lapis dari perusahaan besar yang labanya sudah stabil. Istilah Blue Chip awalnya berasal dari permainan poker. Dalam permainan poker, keping koin (chip)
-                                berwarna biru memiliki nilai tertinggi dibandingkan warna merah dan putih.<br></br>
+                          <div className="card-saya">
+                            <img src="https://giansister.files.wordpress.com/2017/10/dss.jpeg?w=300" className="card-img-top rounded-circle " style={{ width: "300px" }} alt="..." />
+                            <div className="card-body">
+                              <h2 className="card-title text-black">Apa itu Bluechip</h2>
+                              <p className="card-text text-black ">
+                                Saham menjadi salah satu instrumen investasi yang cukup populer di Indonesia, salah satunya adalah saham blue chip. Melalui bursa saham atau pasar modal, masyarakat
+                                bisa meraih keuntungan sebagai salah satu cara memperkuat kondisi finansialnya.<br></br>
+                                Bagi Anda yang tertarik atau baru mencoba instrumen investasi ini, mungkin Anda akan menemukan berbagai istilah baru. Dua diantaranya ialah saham LQ45, dan saham blue
+                                chip.<br></br>
+                                Saham blue chip sendiri diartikan sebagai saham lapis dari perusahaan besar yang labanya sudah stabil. Istilah Blue Chip awalnya berasal dari permainan poker. Dalam
+                                permainan poker, keping koin (chip) berwarna biru memiliki nilai tertinggi dibandingkan warna merah dan putih.<br></br>
                                 <br></br>
-                                Istilah Blue Chip dipakai dan dikenal secara luas di dunia saham setelah diperkenalkan oleh Oliver Gingold. Saat itu, Gingold melihat tren bahwa saham-saham seharga USD 200-USD 250 menarik minat investor.
-                                Setelah itu, ia kembali ke kantor kemudian berkata kepada temannya untuk menuliskan blue chip stocks atau saham-saham kepingan biru. Dari situlah, istilah blue chip hingga saat ini terkenal dan digunakan oleh
-                                mereka yang terjun ke dunia saham. Sejak saat itu, penggunaan terminologi Blue Chip digunakan untuk saham-saham unggulan di dunia pasar modal. <br></br>
+                                Istilah Blue Chip dipakai dan dikenal secara luas di dunia saham setelah diperkenalkan oleh Oliver Gingold. Saat itu, Gingold melihat tren bahwa saham-saham seharga USD
+                                200-USD 250 menarik minat investor. Setelah itu, ia kembali ke kantor kemudian berkata kepada temannya untuk menuliskan blue chip stocks atau saham-saham kepingan biru.
+                                Dari situlah, istilah blue chip hingga saat ini terkenal dan digunakan oleh mereka yang terjun ke dunia saham. Sejak saat itu, penggunaan terminologi Blue Chip
+                                digunakan untuk saham-saham unggulan di dunia pasar modal. <br></br>
                                 <br></br>
-                                Menurut New York Stock Exchange, blue chip dapat didefinisikan sebagai saham dari perusahaan yang memiliki reputasi nasional, baik dari sisi kualitas, kemampuan serta kehandalan untuk beroperasi yang
-                                menguntungkan dalam berbagai situasi ekonomi dengan keadaan baik maupun buruk. Dengan kata lain, saham blue juga biasa diartikan sebagai saham papan atas yang bergerak di bidang industri, umumnya pada
-                                perusahaan besar.<br></br>
-                                Selain memiliki kapitalisasi pasar yang besar dan ramai diperdagangkan, saham blue chip punya kriteria lainnya, yaitu saham yang menjadi market leader (pemimpin pasar) di sektornya. Oleh karena itu,
-                                perusahaan yang masuk ke dalam kategori saham blue chip harus memiliki etos kerja yang baik, fundamental yang baik, serta dikelola oleh orang-orang profesional dan dikerjakan oleh banyak orang.{" "}
+                                Menurut New York Stock Exchange, blue chip dapat didefinisikan sebagai saham dari perusahaan yang memiliki reputasi nasional, baik dari sisi kualitas, kemampuan serta
+                                kehandalan untuk beroperasi yang menguntungkan dalam berbagai situasi ekonomi dengan keadaan baik maupun buruk. Dengan kata lain, saham blue juga biasa diartikan
+                                sebagai saham papan atas yang bergerak di bidang industri, umumnya pada perusahaan besar.<br></br>
+                                Selain memiliki kapitalisasi pasar yang besar dan ramai diperdagangkan, saham blue chip punya kriteria lainnya, yaitu saham yang menjadi market leader (pemimpin pasar)
+                                di sektornya. Oleh karena itu, perusahaan yang masuk ke dalam kategori saham blue chip harus memiliki etos kerja yang baik, fundamental yang baik, serta dikelola oleh
+                                orang-orang profesional dan dikerjakan oleh banyak orang.{" "}
                               </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
+                    <div className="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
                       <div className="col">
-                        <div class="card-saya">
-                          <div class="card-body">
-                            <h2 class="card-title text-black mt-5 ">Ciri Perusahaan Kategori Saham Blue Chip</h2>
-                            <p class="card-text text-black ">
-                              Sebagai saham blue chip, perusahaan yang masuk ke dalam kelompok saham blue chip harus memiliki beberapa kriteria atau kategori agar bisa disebut sebagai saham blue chip. Salah satunya adalah memiliki
-                              kapitalisasi besar. Nilai kapitalisasi suatu perusahaan mampu mencapai nilai triliunan rupiah. Besarnya kapitalisasi pasar ini mampu membuat investor sulit dalam memanipulasi harga. Selain itu, saham Blue Chip
-                              juga memiliki likuiditas yang bagus. Biasanya likuiditas ini dipengaruhi oleh jumlah saham yang dimiliki publik atau beredar di bursa. Makin banyak kepemilikan saham publik, maka makin likuid pula saham
-                              tersebut. Saham yang masuk ke dalam kategori Blue Chip biasanya juga telah sudah cukup lama lama terdaftar di Bursa Efek Indonesia, dengan jangka waktu minimal lima tahun.
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black mt-5 ">Ciri Perusahaan Kategori Saham Blue Chip</h2>
+                            <p className="card-text text-black ">
+                              Sebagai saham blue chip, perusahaan yang masuk ke dalam kelompok saham blue chip harus memiliki beberapa kriteria atau kategori agar bisa disebut sebagai saham blue chip.
+                              Salah satunya adalah memiliki kapitalisasi besar. Nilai kapitalisasi suatu perusahaan mampu mencapai nilai triliunan rupiah. Besarnya kapitalisasi pasar ini mampu membuat
+                              investor sulit dalam memanipulasi harga. Selain itu, saham Blue Chip juga memiliki likuiditas yang bagus. Biasanya likuiditas ini dipengaruhi oleh jumlah saham yang
+                              dimiliki publik atau beredar di bursa. Makin banyak kepemilikan saham publik, maka makin likuid pula saham tersebut. Saham yang masuk ke dalam kategori Blue Chip biasanya
+                              juga telah sudah cukup lama lama terdaftar di Bursa Efek Indonesia, dengan jangka waktu minimal lima tahun.
                             </p>
                             <h3 className=" text-black">Saham Blue Chip: Nilai Kapitalisasi Besar</h3>
                             <p className="card-text  text-black">
-                              Ciri pertama dari saham blue chip adalah kapitalisasi yang besar, adapun istilah kapitalisasi adalah harga perusahaan jika ingin dibeli secara utuh. Untuk saham blue chip, memiliki kapitalisasi besar di atas
-                              Rp40 triliun. Untuk penggolongannya sendiri, biasanya ketika kapitalisasi sudah mencapai di atas Rp10 triliun ke atas maka sudah dikatakan besar. Sementara untuk kapitalisasi antara Rp500 miliar hingga Rp10
-                              triliun, maka saham itu akan dikategorikan sebagai saham lapis dua. Kemudian, untuk harga di bawah Rp500 miliar, makan akan dimasukkan ke dalam saham lapis tiga.
+                              Ciri pertama dari saham blue chip adalah kapitalisasi yang besar, adapun istilah kapitalisasi adalah harga perusahaan jika ingin dibeli secara utuh. Untuk saham blue
+                              chip, memiliki kapitalisasi besar di atas Rp40 triliun. Untuk penggolongannya sendiri, biasanya ketika kapitalisasi sudah mencapai di atas Rp10 triliun ke atas maka sudah
+                              dikatakan besar. Sementara untuk kapitalisasi antara Rp500 miliar hingga Rp10 triliun, maka saham itu akan dikategorikan sebagai saham lapis dua. Kemudian, untuk harga di
+                              bawah Rp500 miliar, makan akan dimasukkan ke dalam saham lapis tiga.
                             </p>
                             <h3 className=" text-black">Saham Blue Chip: Pemimpin di Sektor Industrinya</h3>
                             <p className=" card-text text-black">
-                              Untuk ciri-ciri lain saham blue chip adalah perusahaan dengan saham ini merupakan pemimpin di sektor industrinya. Produknya bisa saja sudah terkenal di nasional maupun internasional, sehingga sudah pasti telah
-                              beroperasi selama puluhan tahun.
+                              Untuk ciri-ciri lain saham blue chip adalah perusahaan dengan saham ini merupakan pemimpin di sektor industrinya. Produknya bisa saja sudah terkenal di nasional maupun
+                              internasional, sehingga sudah pasti telah beroperasi selama puluhan tahun.
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row text-center mb-4">
-                      <div class="card-saya">
-                        <div class="card-body">
+                    <div className="row text-center mb-4">
+                      <div className="card-saya">
+                        <div className="card-body">
                           <h3 className=" text-black">Saham Blue Chip: Dividen yang Konsisten</h3>
                           <p className=" card-text text-black">
-                            Ciri-ciri berikutnya dari saham blue chip adalah perusahaan yang memiliki dividen konsisten. Dividen sendiri adalah laba yang dihasilkan perusahaan tersebut, kemudian diberikan kepada pemegang saham dalam kurun
-                            waktu 10 tahun secara konsisten. Tiap tahunnya perusahaan tersebut memberikan laba sebagai bentuk apresiasi atas dukungan pemegang saham tersebut. Hal inilah yang membuat saham perusahaan tersebut layak
-                            dikategorikan sebagai saham blue chip.
+                            Ciri-ciri berikutnya dari saham blue chip adalah perusahaan yang memiliki dividen konsisten. Dividen sendiri adalah laba yang dihasilkan perusahaan tersebut, kemudian
+                            diberikan kepada pemegang saham dalam kurun waktu 10 tahun secara konsisten. Tiap tahunnya perusahaan tersebut memberikan laba sebagai bentuk apresiasi atas dukungan
+                            pemegang saham tersebut. Hal inilah yang membuat saham perusahaan tersebut layak dikategorikan sebagai saham blue chip.
                           </p>
                           <h3 className=" text-black">Saham Blue Chip: Kinerja Perusahaan Sudah Solid</h3>
                           <p className="card-text  text-black">
-                            Ciri saham blue chip yang selanjutnya adalah memiliki trek kinerja perusahaan yang solid. Misalnya saja seperti laba yang dihasilkan konsisten, memiliki produk berkualitas dan dicintai masyarakat, track record
-                            perusahaan terus tumbuh tiap tahunnya. Dengan kata lain, perusahaan dengan saham blue chip termasuk ke dalam kategori perusahaan yang tidak mudah goyah dan bangkrut meskipun keadaan ekonomi sedang mengalami
-                            krisis sekalipun.
+                            Ciri saham blue chip yang selanjutnya adalah memiliki trek kinerja perusahaan yang solid. Misalnya saja seperti laba yang dihasilkan konsisten, memiliki produk berkualitas
+                            dan dicintai masyarakat, track record perusahaan terus tumbuh tiap tahunnya. Dengan kata lain, perusahaan dengan saham blue chip termasuk ke dalam kategori perusahaan yang
+                            tidak mudah goyah dan bangkrut meskipun keadaan ekonomi sedang mengalami krisis sekalipun.
                           </p>
                           <h2 className=" text-black">Saham Blue Chip: Ramai Diperdagangkan</h2>
                           <p className="card-text  text-black">
-                            Banyak investor, baik itu perorangan maupun lembaga yang memiliki dan memperdagangkan saham blue chip ini. Saham yang masuk ke dalam kategori blue chip juga selalu memasuki daftar teraktif di bursa serta masuk
-                            indeks LQ45. Adapun, LQ45 ini adalah indeks yang berisikan saham-saham likuid ataupun saham-saham yang ramai diperdagangkan, dan rata-rata saham blue chip ada di dalam indeks tersebut.
+                            Banyak investor, baik itu perorangan maupun lembaga yang memiliki dan memperdagangkan saham blue chip ini. Saham yang masuk ke dalam kategori blue chip juga selalu memasuki
+                            daftar teraktif di bursa serta masuk indeks LQ45. Adapun, LQ45 ini adalah indeks yang berisikan saham-saham likuid ataupun saham-saham yang ramai diperdagangkan, dan
+                            rata-rata saham blue chip ada di dalam indeks tersebut.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div class="row justify-content-evenly fs-5">
-                      <div class="col text-start bluechips">
+                    <div className="row justify-content-evenly fs-5">
+                      <div className="col text-start bluechips">
                         <div className="col">
                           <h4 data-aos="zoom-in-right" data-aos-delay="200">
-                            Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
+                            Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara
+                            luas.
                           </h4>
                         </div>
                         <div className="col">
@@ -449,12 +462,12 @@ function Main() {
                   </div>
                 </TabPanel>
                 {/* <TabPanel value={value} index={2} dir={theme.direction}>
-                  <div class="container mt-1">
-                    <div class="row text-center mb-3 main">
+                  <div className="container mt-1">
+                    <div className="row text-center mb-3 main">
                       <h1>BLUECHIPS</h1>
                     </div>
-                    <div class="row justify-content-evenly fs-5">
-                      <div class="col text-start bluechips">
+                    <div className="row justify-content-evenly fs-5">
+                      <div className="col text-start bluechips">
                         <div className="col">
                           <h4 data-aos="zoom-in-right" data-aos-delay="200">
                             Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
@@ -485,12 +498,12 @@ function Main() {
                   </div> */}
 
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                  <div class="container mt-5">
-                    <div class="row text-center mb-3 main ">
+                  <div className="container mt-5">
+                    <div className="row text-center mb-3 main text-white">
                       <h1>Proses</h1>
                     </div>
                     <div className="row">
-                      <div className="col-lg-12 mt-5">
+                      <div className="col-lg-12 mt-5 text-white">
                         <h2>Masukkan Data Parameter Saham Bluechips Terbaru</h2>
                       </div>
                     </div>
@@ -499,9 +512,11 @@ function Main() {
                     <div className="container">
                       <div className="row justify-content-evenly">
                         {data.map((item) => (
-                          <div className="col saham">
-                            <div className="col-card " data-aos="zoom-in" data-aos-delay="500">
-                              <img src={item.img} alt="" className="mt-3 " />
+                          <div className="col saham ">
+                            <div className="col-card  justify-content-center " data-aos="zoom-in" data-aos-delay="500">
+                              <div className="d-flex justify-content-center">
+                                <img src={item.img} alt="" className="mt-3 rounded " style={{ width: "300px", height: "300px" }} />
+                              </div>
                               <div className="card-body justify-text-center">
                                 <p className="card-text text-black">{item.nama}</p>
                                 <h5 className="card-text text-black">Price to Earning Ratio(PER) : {item.per}x</h5>
@@ -533,12 +548,12 @@ function Main() {
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={3} dir={theme.direction}>
-                  <div class="container mt-5">
-                    <div class="row text-center mb-3 main">
+                  <div className="container mt-5">
+                    <div className="row text-center mb-3 main text-white">
                       <h1>Hasil</h1>
                     </div>
-                    <div class="row justify-content-evenly fs-5">
-                      <div class="col-md-12 text-start bluechips mt-2 " data-aos="zoom-in" data-aos-delay="100">
+                    <div className="row justify-content-evenly fs-5">
+                      <div className="col-md-12 text-start bluechips mt-2 " data-aos="zoom-in" data-aos-delay="100">
                         <table className="table table-striped table-hover table-bordered border-info caption-top align-middle">
                           <caption className="text-white tex-bold">Tabel Hasil Perhitungan</caption>
                           <thead>
@@ -573,27 +588,29 @@ function Main() {
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={4} dir={theme.direction}>
-                  <div class="container mt-1 ms-auto">
-                    <div class="row text-center mb-3 text-white">
+                  <div className="container mt-1 ms-auto">
+                    <div className="row text-center mb-3 text-white">
                       <div className="col main">
                         <h1>PROFIL</h1>
                       </div>
                     </div>
                     <div className="row mb-5">
                       <div className="col">
-                        <div class="card-saya">
-                          <div class="card-body">
-                            <h2 class="card-title text-black">Mengenal Saham</h2>
-                            <p class="card-text text-black ">
-                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh keuntungan dari kenaikan harga (capital gain)
-                              ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun
-                              tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh
-                              berupa deviden yaitu bagian dari keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan dan
-                              khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik terhadap pergerakan harga dari daftar saham yang
-                              dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22 jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan
-                              (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia
-                              lebih dari beberapa alternatif pilihan saham dan beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu:
-                              pertimbangan fundamental dan pertimbangan teknikal (Hartono, 2003).
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black">Mengenal Saham</h2>
+                            <p className="card-text text-black ">
+                              Saham merupakan salah satu instrument investasi yang bisa digunakan untuk mencapai tujuan keuangan anda. Tujuan dari berinvestasi saham biasanya untuk memperoleh
+                              keuntungan dari kenaikan harga (capital gain) ataupun dividen (cashflow). Investasi saham, biasanya lebih cocok untuk investasi jangka panjang agar memperoleh keuntungan
+                              yang optimal. Investasi saham memiliki tingkat potensi keuntungan yang tinggi, namun tingkat risikonya juga tinggi karna investasi saham. Saham menurut M. Paulus
+                              Situmorang (2008:45) Saham adalah tanda pernyataan modal pada suatu perusahaan perseroan terbatas dengan manfaat yang dapat diperoleh berupa deviden yaitu bagian dari
+                              keuntungan perusahaan yang dibagikan kepada harga belinya, manfaat non-financial antara lain berupa konsekuensinya atas kepemilikan saham berupa kekuasaaan, kebanggaan
+                              dan khususnya hak suara dalam menentukan jalannya perusahaan. Di Bursa Efek Indonesia (BEI), ada yang disebut sebagai Indeks Saham, yang merupakan ukuran statistik
+                              terhadap pergerakan harga dari daftar saham yang dipilih berdasarkan karakteristik atau kriteria tertentu yang digunakan sebagai wadah atau sarana untuk investasi. Ada 22
+                              jenis indeks saham di BEI, beberapa di antaranya misalnya Indeks Harga Saham Gabungan (IHSG), Indeks LQ45, Indeks IDX30, Indeks Kompas100, Indeks Saham Syariah Indonesia
+                              (ISSI), Indeks IDX BUMN20, dan seterusnya. Ada beberapa Permasalahan konvensional pemilihan saham muncul apabila tersedia lebih dari beberapa alternatif pilihan saham dan
+                              beberapa kriteria – kriteria yang menjadi bahan pertimbangan dalam pembelian saham tersebut. Secara global ada dua kelompok kriteria pemilihan saham, yaitu: pertimbangan
+                              fundamental dan pertimbangan teknikal (Hartono, 2003).
                             </p>
                           </div>
                         </div>
@@ -602,18 +619,20 @@ function Main() {
 
                     <div className="row ">
                       <div className="col">
-                        <div class="card-saya">
-                          <div class="card-body">
-                            <h2 class="card-title text-black">Jenis saham</h2>
-                            <p class="card-text text-black ">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black">Jenis saham</h2>
+                            <p className="card-text text-black ">
                               1. Saham Biasa <br></br>
                               2. Saham Preferen Ciri ciri saham: <br></br>
                               1. Saham yang Anomali dan Indeks <br></br>
                               2. Saham yang posisi open lebih rendah dari posisi close <br></br>
                               3. Saham yang jatuh dalam Manfaat saham:<br></br>
                               1. Deviden <br></br>
-                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM. <br></br>
-                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham, yaitu:<br></br>
+                              Deviden adalah bagian laba pada perusahan yang diberikan pada penjabat saham. Beberapa deviden yang diberikan dan dianjurkan oleh Dewan Direksi dan disepakati dalam RUPM.{" "}
+                              <br></br>
+                              2. Capital Gain Penanaman modal dapat menghayati capital gain, ketika tariff jual melampaui tarif beli saham tersebut. Risiko saham: Adapun beberapa risiko pada saham,
+                              yaitu:<br></br>
                               1. Tidak terdapat pembagian deviden <br></br>
                               2. Risiko Likuidasi <br></br>
                               3. Saham delisting dari bursa <br></br>
@@ -634,35 +653,35 @@ function Main() {
           </div>
         </div>
 
-        {/* <nav class="navbar navbar-expand-lg navbar-dark ">
-          <div class="container">
-            <a class="navbar-brand atas-main">
+        {/* <nav className="navbar navbar-expand-lg navbar-dark ">
+          <div className="container">
+            <a className="navbar-brand atas-main">
               <Link to="/">
-                <img src={logo} alt="" style={{ width: "150px", height: "150px" }} class="d-inline-block align-text-top rounded-circle" />
+                <img src={logo} alt="" style={{ width: "150px", height: "150px" }} className="d-inline-block align-text-top rounded-circle" />
               </Link>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#Profiles">
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#Profiles">
                     PROFIL
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#Bluechips">
+                <li className="nav-item">
+                  <a className="nav-link" href="#Bluechips">
                     BlueChip
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#Result">
+                <li className="nav-item">
+                  <a className="nav-link" href="#Result">
                     Proses
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#Hasil">
+                <li className="nav-item">
+                  <a className="nav-link" href="#Hasil">
                     Hasil
                   </a>
                 </li>

@@ -129,15 +129,39 @@ function ModalEdit({ id, closeModal }) {
         <Form>
           <FormGroup>
             <FormLabel>Price to Earning Ratio(PER)</FormLabel>
-            <FormControl type="number" step="0.01" placeholder="Per" required style={{ marginBottom: "2rem" }} value={update?.per} onChange={(e) => setUpdate({ ...update, per: parseFloat(e.target.value) })} />
+            <FormControl
+              type="number"
+              step="0.01"
+              placeholder="Per"
+              required
+              style={{ marginBottom: "2rem" }}
+              value={update?.per}
+              onChange={(e) => setUpdate({ ...update, per: parseFloat(e.target.value) })}
+            />
           </FormGroup>
           <FormGroup>
             <FormLabel>Price to Book Value (PBV)</FormLabel>
-            <FormControl type="number" step="0.01" placeholder="Pbv" required style={{ marginBottom: "2rem" }} value={update?.pbv} onChange={(e) => setUpdate({ ...update, pbv: parseFloat(e.target.value) })} />
+            <FormControl
+              type="number"
+              step="0.01"
+              placeholder="Pbv"
+              required
+              style={{ marginBottom: "2rem" }}
+              value={update?.pbv}
+              onChange={(e) => setUpdate({ ...update, pbv: parseFloat(e.target.value) })}
+            />
           </FormGroup>
           <FormGroup>
             <FormLabel>Return on Equity (ROE)</FormLabel>
-            <FormControl type="number" step="0.01" placeholder="Roe" required style={{ marginBottom: "2rem" }} value={update?.roe} onChange={(e) => setUpdate({ ...update, roe: parseFloat(e.target.value) })} />
+            <FormControl
+              type="number"
+              step="0.01"
+              placeholder="Roe"
+              required
+              style={{ marginBottom: "2rem" }}
+              value={update?.roe}
+              onChange={(e) => setUpdate({ ...update, roe: parseFloat(e.target.value) })}
+            />
           </FormGroup>
           <FormGroup>
             <FormLabel>Dividend Yield (DY)</FormLabel>
