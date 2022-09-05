@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../Main/main.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -13,8 +12,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Proses from "../hasil/proses";
-import Cross from "../../img/OopsCross.svg";
 function Main() {
   const [data, setData] = useState([]);
   const [show, SetShow] = useState(false);
@@ -150,9 +147,16 @@ function Main() {
     item.roe = 1;
     return item;
   });
+
+  // const olahHasil = test?.map((item) => {
+  //   item?.pbv * 0.07 + item?.per * 0.2 + item?.dy * 0.2 + item?.roe * 0.5;
+  //   return item;
+  // });
+
   // console.log("test", test);
   console.log("data Awal", data);
   console.log("first", test);
+
   // const bobotPbv = (data) => {
   //   if (data?.pbv >= 0.1 && data?.pbv <= 0.9) {
   //     bobotData.bobotPbv = 1;
@@ -265,10 +269,10 @@ function Main() {
                 <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
-                  {/* <Tab label="Parameter" {...a11yProps(2)} /> */}
-                  <Tab label="Proses" {...a11yProps(2)} />
-                  <Tab label="Hasil" {...a11yProps(3)} />
-                  <Tab label="Log Out" {...a11yProps(4)} onClick={handleSignOut} />
+                  <Tab label="Parameter" {...a11yProps(2)} />
+                  <Tab label="Proses" {...a11yProps(3)} />
+                  <Tab label="Hasil" {...a11yProps(4)} />
+                  <Tab label="Log Out" {...a11yProps(5)} onClick={handleSignOut} />
                 </Tabs>
               </AppBar>
               <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"} index={value} onChangeIndex={handleChangeIndex}>
@@ -461,43 +465,97 @@ function Main() {
                     </div>
                   </div>
                 </TabPanel>
-                {/* <TabPanel value={value} index={2} dir={theme.direction}>
+                <TabPanel value={value} index={2} dir={theme.direction}>
                   <div className="container mt-1">
-                    <div className="row text-center mb-3 main">
-                      <h1>BLUECHIPS</h1>
+                    <div className="row text-center mb-3 main text-white">
+                      <h1>PARAMETER</h1>
                     </div>
-                    <div className="row justify-content-evenly fs-5">
-                      <div className="col text-start bluechips">
+                    <div className="row text-center mb-4">
+                      {/* data-aos="fade-right" data-aod-delay="500"// */}
+
+                      <div className="row">
                         <div className="col">
-                          <h4 data-aos="zoom-in-right" data-aos-delay="200">
-                            Perusahaan yg diakui secara nasional, mapan, dan sehat secara finansial. Perusahaan blue chip umumnya menjual produk dan layanan berkualitas tinggi dan diterima secara luas.
-                          </h4>
-                        </div>
-                        <div className="col">
-                          <h4 data-aos="zoom-in-right" data-aos-delay="300">
-                            Masuk dalam 60 perusahaan dengan nilai transaksi di bursa tertinggi dalam 1 tahun terakhir
-                          </h4>
-                        </div>
-                        <div className="col">
-                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
-                            Masuk daftar 60 perusahaan dengan market capitalization tertinggi dalam 1 tahun atau 12 bulan terakhir
-                          </h4>
-                        </div>
-                        <div className="col">
-                          <h4 data-aos="zoom-in-right" data-aos-delay="400">
-                            Menunjukkan kinerja keuangan serta prospek pertumbuhan yang tinggi
-                          </h4>
-                        </div>
-                        <div className="col mb-2 pb-1">
-                          <h4 data-aos="zoom-in-right" data-aos-delay="500">
-                            Telah listing di BEI minimal 3 bulan lamanya
-                          </h4>
+                          <div className="card-saya">
+                            <div className="card-body">
+                              <h2 className="card-title text-black">PARAMETER</h2>
+                              <p className="card-text text-black ">
+                                Parameter adalah nilai-nilai inputan yang digunakan dalam proses penentuan saham yang baik <br></br>
+                                Saham blue chip sendiri.memiliki 4 parameter penting yaitu PER, PBV, ROE, dan DY<br></br>
+                                <br></br>
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div> */}
+                    <div className="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
+                      <div className="col">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black mt-5 ">1.Price to Earning Ratio (PER)</h2>
+                            <p>
+                              Price to Earning Ratio disingkat dengan PER merupakan rasio yang menggambarkan harga saham sebuah perusahaan dibandingkan dengan keuntungan atau laba yang dihasilkan
+                              perusahaan tersebut. Analisa PER suatu perusahaan dapat dilakukan dengan cara membandingkan PER dalam industri sejenis. Jika PER lebih kecil dari rata-rata emiten lainnya
+                              dalam industri sejenis, maka harga perusahaan dianggap relatif lebih murah. Saham dengan PER yang rendah banyak diminati oleh investor. Makin Kecil berrti harga saham
+                              Makin murah.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
+                      <div className="col">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black mt-5 ">2.Price to Book Value (PBV)</h2>
+                            <p>
+                              Price to Book Value disingkat dengan PBV, adalah rasio harga saham terhadap nilai buku perusahaan. PBV digunakan untuk melihat seberapa besar kelipatan dari nilai pasar
+                              saham perusahaan dengan nilai bukunya. Misalkan PBV sebesar 2x, artinya harga saham sudah sebesar dua kali lipat dibandingkan kekayaan bersih suatu perusahaan. Dengan
+                              kata lain, harga saham tersebut 2 kali lipat lebih mahal dari modal bersihnya. PBV rendah sering dijadikan indikator mencari saham yang murah atau undervalued. Investor
+                              disarankan untuk mencari saham dengan PBV yang lebih rendah daripada rata-rata PBV dalam industri sejenis. Nilai Asli dari saham.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
+                      <div className="col">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black mt-5 ">3.Return on Equity (ROE)</h2>
+                            <p>
+                              Return On Equity disingkat dengan ROE. Saham dengan ROE yang tinggi, maka return saham terhadap modal dinilai tinggi. Semakin tinggi ROE, maka perusahaan tersebut semakin
+                              baik. Biasanya, investor memilih perusahaan dengan ROE yang tinggi karena perusahaan tersebut dapat mengelola modalnya sehingga menghasilkan laba besar. Cara menganalisa
+                              ROE adalah dengan membandingkan ROE pada perusahaan dalam industri sejenis dan juga membandingkan ROE dengan periode sebelumnya. Semakin meningkat ROE, artinya perusahaan
+                              tersebut semakin bertumbuh.Kemampuan peusahaan dalam mencari keuntungan.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row text-center mb-4 mt-5" data-aos="fade-down " data-aos-delay="200">
+                      <div className="col">
+                        <div className="card-saya">
+                          <div className="card-body">
+                            <h2 className="card-title text-black mt-5 ">4.Dividend Yield (DY)</h2>
+                            <p>
+                              Dividend Yield (DY) atau rasio hasil dividen merupakan dividen per lembar saham dibagi dengan harga saham. Rasio ini menunjukkan seberapa besar keuntungan yang dibagikan
+                              perusahaan kepada pemegang saham. Apabila suatu saham memiliki dividend yield (DY) yang tinggi, biasanya harga saham akan naik pada saat pengumuman dividen. Para investor
+                              jangka panjang sangat tertarik dengan dividend yield (DY) karena mengharapkan return yang konsisten setiap tahunnya. Semakin tinggi maka keuntungan per lot semakin besar.
+                              Semua data parameter pendukung-pendukung tersebut dapat selalu di update melalui website
+                              <a href="http://www.idx.co.id" style={{ textDecoration: "none" }}>
+                                {" "}
+                                idx.co.id
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TabPanel>
 
-                <TabPanel value={value} index={2} dir={theme.direction}>
+                <TabPanel value={value} index={3} dir={theme.direction}>
                   <div className="container mt-5">
                     <div className="row text-center mb-3 main text-white">
                       <h1>Proses</h1>
@@ -547,7 +605,7 @@ function Main() {
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel value={value} index={3} dir={theme.direction}>
+                <TabPanel value={value} index={4} dir={theme.direction}>
                   <div className="container mt-5">
                     <div className="row text-center mb-3 main text-white">
                       <h1>Hasil</h1>
@@ -587,7 +645,7 @@ function Main() {
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel value={value} index={4} dir={theme.direction}>
+                <TabPanel value={value} index={5} dir={theme.direction}>
                   <div className="container mt-1 ms-auto">
                     <div className="row text-center mb-3 text-white">
                       <div className="col main">
