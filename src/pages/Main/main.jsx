@@ -269,7 +269,7 @@ function Main() {
                 <Tabs classname="tabss" centered value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" variant="scrollable" aria-label="full width tabs example">
                   <Tab label="Profiles" {...a11yProps(0)} />
                   <Tab label="Bluechip" {...a11yProps(1)} />
-                  <Tab label="Parameter" {...a11yProps(2)} />
+                  <Tab label="Kriteria Saham" {...a11yProps(2)} />
                   <Tab label="Proses" {...a11yProps(3)} />
                   <Tab label="Hasil" {...a11yProps(4)} />
                   <Tab label="Log Out" {...a11yProps(5)} onClick={handleSignOut} />
@@ -468,7 +468,7 @@ function Main() {
                 <TabPanel value={value} index={2} dir={theme.direction}>
                   <div className="container mt-1">
                     <div className="row text-center mb-3 main text-white">
-                      <h1>PARAMETER</h1>
+                      <h1>Kriteria Saham</h1>
                     </div>
                     <div className="row text-center mb-4">
                       {/* data-aos="fade-right" data-aod-delay="500"// */}
@@ -477,10 +477,10 @@ function Main() {
                         <div className="col">
                           <div className="card-saya">
                             <div className="card-body">
-                              <h2 className="card-title text-black">PARAMETER</h2>
+                              <h2 className="card-title text-black">Kriteria Saham</h2>
                               <p className="card-text text-black ">
-                                Parameter adalah nilai-nilai inputan yang digunakan dalam proses penentuan saham yang baik <br></br>
-                                Saham blue chip sendiri.memiliki 4 parameter penting yaitu PER, PBV, ROE, dan DY<br></br>
+                                Kriteria Saham adalah nilai-nilai inputan yang digunakan dalam proses penentuan saham yang baik <br></br>
+                                Saham blue chip sendiri.memiliki 4 Kriteria Saham penting yaitu PER, PBV, ROE, dan DY<br></br>
                                 <br></br>
                               </p>
                             </div>
@@ -542,7 +542,7 @@ function Main() {
                               Dividend Yield (DY) atau rasio hasil dividen merupakan dividen per lembar saham dibagi dengan harga saham. Rasio ini menunjukkan seberapa besar keuntungan yang dibagikan
                               perusahaan kepada pemegang saham. Apabila suatu saham memiliki dividend yield (DY) yang tinggi, biasanya harga saham akan naik pada saat pengumuman dividen. Para investor
                               jangka panjang sangat tertarik dengan dividend yield (DY) karena mengharapkan return yang konsisten setiap tahunnya. Semakin tinggi maka keuntungan per lot semakin besar.
-                              Semua data parameter pendukung-pendukung tersebut dapat selalu di update melalui website
+                              Semua data Kriteria Saham pendukung-pendukung tersebut dapat selalu di update melalui website
                               <a href="http://www.idx.co.id" style={{ textDecoration: "none" }}>
                                 {" "}
                                 idx.co.id
@@ -562,7 +562,7 @@ function Main() {
                     </div>
                     <div className="row">
                       <div className="col-lg-12 mt-5 text-white">
-                        <h2>Masukkan Data Parameter Saham Bluechips Terbaru</h2>
+                        <h2>Masukkan Kriteria Saham Bluechips Terbaru</h2>
                       </div>
                     </div>
                   </div>
